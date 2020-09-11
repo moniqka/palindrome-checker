@@ -1,0 +1,30 @@
+@charset 'UTF-8';
+//////////////// VARIABLES ////////////////
+//Typography
+$basefont: 'Roboto', 'Lato', sans-serif;
+$basefont-condensed: 'Roboto Condensed', $basefont;
+
+$font-size:        14px;
+$font-size-medium: 16px;
+$font-size-large:  20px;
+$font-title: 40px;
+
+$line-height:      1.5em;
+$font-weight:      400;
+
+//Media query
+$mobile-break-width: 900px;
+$mobile-break-height: 500px;
+
+//Colors
+$primary:         #fbb571;
+$secondary:       #ffd188;
+
+$primary-dark:            darken($primary, 15%);
+$primary-light:           lighten($primary, 15%);
+$secondary-dark:           darken($secondary, 15%);
+$secondary-light:           lighten($secondary, 15%);
+
+$body-bg:               #0d0d0d;
+
+//////////////// LIBRARY ////////////////
