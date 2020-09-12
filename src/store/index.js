@@ -8,23 +8,23 @@ export default new Vuex.Store({
     checkerHistory: [
       {
         text: "Tenet",
-        palindrom: true
+        palindrome: true
       },
       {
         text: "mama",
-        palindrom: false
+        palindrome: false
       },
       {
         text: "0o oko w OKO o0",
-        palindrom: true
+        palindrome: true
       },
       {
         text: "kajak",
-        palindrom: true
+        palindrome: true
       },
       {
         text: "KABOOM",
-        palindrom: false
+        palindrome: false
       }
     ]
   },

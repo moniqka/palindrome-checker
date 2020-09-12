@@ -20,7 +20,16 @@
         placeholder="type in word or phase..." />
       <button type="submit" class="button">CHECK</button>
     </form>
-    <section class="search-history"></section>
+    <section class="search-history">
+      <ul class="search-history__list">
+        <li v-for="(word, key) in history"
+            :key="key"
+            class="search-history__word">
+          <p class="search-history__word__text">{{ word.text }}</p>
+          <span class="search-history__word__result"> {{ word.palindrome }} </span>
+        </li>
+      </ul>
+    </section>
     <footer>Ceated by Monika Kowalska</footer>
   </div>
 </template>
@@ -32,7 +41,8 @@ export default {
   data() {
     return {
       text: "",
-      result: ""
+      result: "",
+      history: []
     };
   },
   computed: {
@@ -62,6 +72,9 @@ export default {
         this.result = `Type in word or phase first!`;
       }
     }
+  },
+  created() {
+    this.history = this.checkerHistory;
   }
 };
 </script>
@@ -88,5 +101,17 @@ main.container {
   width: 100%;
   margin: 10px;
   padding: 5px;
+  &__word {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px 20px;
+    &__text {
+      font-size: 18px;
+    }
+    &__result {
+      color: green;
+    }
+  }
 }
 </style>
