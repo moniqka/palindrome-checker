@@ -1,0 +1,22 @@
+[
+  {
+    "text": "Tenet",
+    "palindrome": true
+  },
+  {
+    "text": "mama",
+    "palindrome": false
+  },
+  {
+    "text": "0o oko w OKO o0",
+    "palindrome": true
+  },
+  {
+    "text": "kajak",
+    "palindrome": true
+  },
+  {
+    "text": "KABOOM",
+    "palindrome": false
+  }
+]

@@ -9,7 +9,7 @@
       </p>
     </header>
     <form class="container" @submit.prevent="checkIsPalindrome">
-      <label for="text-box">{{ result }}</label>
+      <label for="text-box" :style="{ color: isPalindrome ? `green` : `red` }">{{ result }}</label>
       <input
         type="text"
         name="text-box"
@@ -17,16 +17,24 @@
         autocomplete="off"
         v-model="text"
         class="button button__input"
-        placeholder="type in word or phase..." />
+        placeholder="type in word or phase..."
+      />
       <button type="submit" class="button">CHECK</button>
     </form>
     <section class="search-history">
       <ul class="search-history__list">
-        <li v-for="(word, key) in history"
-            :key="key"
-            class="search-history__word">
+        <li
+          v-for="(word, key) in history"
+          :key="key"
+          class="search-history__word"
+        >
           <p class="search-history__word__text">{{ word.text }}</p>
-          <span class="search-history__word__result"> {{ word.palindrome }} </span>
+          <span
+            class="search-history__word__result"
+            :style="{ color: word.palindrome ? `green` : `red` }"
+          >
+            {{ word.palindrome }}
+          </span>
         </li>
       </ul>
     </section>
@@ -36,6 +44,7 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import json from "../json/data.json";
 export default {
   name: "Checker",
   data() {
@@ -50,15 +59,23 @@ export default {
       "checkerHistory"
     ]),
     word() {
-      console.log('getters', this.checkerHistory)
       return this.text.toLowerCase().replace(/[\W_]/g, "");
     },
     wordToCheck() {
-      return this.word.split("").reverse().join("");
+      return this.word
+        .split("")
+        .reverse()
+        .join("");
+    },
+    isPalindrome() {
+      return this.word === this.wordToCheck;
     }
   },
   methods: {
-    ...mapActions([]),
+    ...mapActions([
+      "addCheckedWordToHistory",
+      "getCheckerHistory"
+    ]),
     clearText() {
       this.result = "";
       this.text = "";
@@ -71,10 +88,23 @@ export default {
       } else {
         this.result = `Type in word or phase first!`;
       }
+      this.addToHistory();
+    },
+    addToHistory() {
+      let checkedWord = {
+        text: this.text,
+        palindrome: this.isPalindrome
+      };
+      if (this.word) {
+        this.addCheckedWordToHistory(checkedWord);
+      }
     }
   },
   created() {
-    this.history = this.checkerHistory;
+    this.getCheckerHistory(json);
+  },
+  mounted() {
+    this.history = this.checkerHistory && this.checkerHistory.reverse();
   }
 };
 </script>
@@ -101,16 +131,18 @@ main.container {
   width: 100%;
   margin: 10px;
   padding: 5px;
+  &__list {
+    padding: 0;
+  }
   &__word {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin: 5px 20px;
     &__text {
       font-size: 18px;
-    }
-    &__result {
-      color: green;
+      margin: 0;
     }
   }
 }
