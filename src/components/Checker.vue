@@ -36,8 +36,11 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([]),
+    ...mapGetters([
+      "checkerHistory"
+    ]),
     word() {
+      console.log('getters', this.checkerHistory)
       return this.text.toLowerCase().replace(/[\W_]/g, "");
     },
     wordToCheck() {
