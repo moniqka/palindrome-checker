@@ -9,32 +9,32 @@
       </p>
     </header>
     <main class="container">
-      <input class="button button__input" placeholder="username"/>
-      <input class="button button__input" placeholder="password"/>
+      <input class="button button__input" placeholder="username" />
+      <input class="button button__input" placeholder="password" />
       <button class="button">LOG IN</button>
     </main>
-    <footer> Ceated by Monika Kowalska </footer>
+    <footer>Ceated by Monika Kowalska</footer>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "Login",
-  }
+export default {
+  name: "Login"
+};
 </script>
 
 <style lang="scss">
 @import "@/scss/_library.scss";
-  .title {
-    text-transform: uppercase;
-    font-size: $font-title;
-    &__description {
-      color: $primary-light;
-      font-family: $basefont-condensed;
-    }
+.title {
+  text-transform: uppercase;
+  font-size: $font-title;
+  &__description {
+    color: $primary-light;
+    font-family: $basefont-condensed;
   }
-  main.container {
-    margin-top: 5%;
-    height: auto;
-  }
+}
+main.container {
+  margin-top: 5%;
+  height: auto;
+}
 </style>

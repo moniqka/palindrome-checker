@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Checker v-if="loggedIn"/>
-    <Login v-else/>
+    <Checker v-if="loggedIn" />
+    <Login v-else />
   </div>
 </template>
 
@@ -15,10 +15,10 @@ export default {
     Checker,
     Login
   },
-  data () {
+  data() {
     return {
-      loggedIn: false
-    }
+      loggedIn: true
+    };
   }
 };
 </script>
