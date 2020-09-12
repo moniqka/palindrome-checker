@@ -28,3 +28,59 @@ $secondary-light:           lighten($secondary, 15%);
 $body-bg:               #0d0d0d;
 
 //////////////// LIBRARY ////////////////
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 10%;
+    // margin-top: 20%;
+    color: $primary;
+  }
+  .button {
+    border: 2px solid $primary;
+    background-color: transparent;
+    border-radius: 15px;
+    color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    width: 100%;
+    font-family: $basefont-condensed;
+    font-size: 18px;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity .2s ease-in-out;
+    &:hover {
+      // background: $primary-light;
+      cursor: pointer;
+      border-color: $primary-dark;
+      color: $primary-dark;
+    }
+    &__input {
+      text-transform: none;
+      text-align: left;
+      padding: 0 10px;
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+      &:hover::placeholder {
+        color: $primary-dark;
+      }
+      &:focus::placeholder {
+        color: transparent;
+      }
+      &::placeholder {
+        color: $primary;
+        font-size: $font-size-medium;
+      }
+    }
+  }

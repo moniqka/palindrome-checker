@@ -1,16 +1,24 @@
 <template>
   <div id="app">
-    <Checker/>
+    <Checker v-if="loggedIn"/>
+    <Login v-else/>
   </div>
 </template>
 
 <script>
 import Checker from "./components/Checker.vue";
+import Login from "./components/Login.vue";
 
 export default {
   name: "App",
   components: {
-    Checker
+    Checker,
+    Login
+  },
+  data () {
+    return {
+      loggedIn: false
+    }
   }
 };
 </script>
@@ -45,7 +53,6 @@ body {
 }
 #app {
   background-color: $body-bg;
-  margin-top: 60px;
   font-family: $basefont;
   text-align: center;
 }
