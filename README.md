@@ -3,9 +3,9 @@ recrutation project --> src folder
 </br>
 
 # Previewing Locally
-npm install -g serve
-(-s flag means serve it in Single-Page Application mode)
-serve -s dist
+`npm install -g serve`</br>
+(-s flag means serve it in Single-Page Application mode)</br>
+`serve -s dist`
 
 # GitHub Pages
 I have tried and did everything as following:
