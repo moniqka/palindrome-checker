@@ -5,13 +5,21 @@
         Palindrome Checker
       </div>
       <p class="title__description">
-        A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward.
+        It is NOT SAFE to log in to service only from front-end! Data must be send to back-end for a minimum security (the basic level of security for the transmission of any data over the network is HTTPS). It is possible to create easy log in system in node.js or php.
       </p>
     </header>
-    <form class="container">
-      <input class="button button__input" placeholder="username" />
-      <input class="button button__input" placeholder="password" />
-      <button class="button">LOG IN</button>
+    <form class="container" @submit.prevent="loggIn">
+      <input
+        class="button button__input"
+        v-model="typedUsername"
+        placeholder="username (tester)"
+      />
+      <input
+        class="button button__input"
+        placeholder="password (123tester)"
+        v-model="typedPassword"
+      />
+      <button type="submit" class="button">LOG IN</button>
     </form>
     <footer>Ceated by Monika Kowalska</footer>
   </div>
@@ -19,7 +27,30 @@
 
 <script>
 export default {
-  name: "Login"
+  name: "Login",
+  props: {
+    username: {
+      type: String,
+      default: ""
+    },
+    password: {
+      type: String,
+      default: ""
+    }
+  },
+  data() {
+    return {
+      typedUsername: "",
+      typedPassword: ""
+    }
+  },
+  methods: {
+    loggIn() {
+      if (this.username === this.typedUsername && this.password === this.typedPassword) {
+        this.$emit("isLoggedIn", true)
+      }
+    }
+  }
 };
 </script>
 

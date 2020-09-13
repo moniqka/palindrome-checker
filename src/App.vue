@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <Checker v-if="loggedIn" />
-    <Login v-else />
+    <Login
+      v-else
+      :username="username"
+      :password="password"
+      @isLoggedIn="loggedIn = true"
+    />
   </div>
 </template>
 
@@ -17,7 +22,9 @@ export default {
   },
   data() {
     return {
-      loggedIn: false
+      loggedIn: false,
+      username: "tester",
+      password: "123tester"
     };
   }
 };
