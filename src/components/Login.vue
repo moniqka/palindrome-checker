@@ -5,7 +5,10 @@
         Palindrome Checker
       </div>
       <p class="title__description">
-        It is NOT SAFE to log in to service only from front-end! Data must be send to back-end for a minimum security (the basic level of security for the transmission of any data over the network is HTTPS). It is possible to create easy log in system in node.js or php.
+        It is NOT SAFE to log in to service only from front-end! Data must be
+        send to back-end for a minimum security (the basic level of security for
+        the transmission of any data over the network is HTTPS). It is possible
+        to create easy log in system in node.js or php.
       </p>
     </header>
     <form class="container" @submit.prevent="loggIn">
@@ -42,12 +45,15 @@ export default {
     return {
       typedUsername: "",
       typedPassword: ""
-    }
+    };
   },
   methods: {
     loggIn() {
-      if (this.username === this.typedUsername && this.password === this.typedPassword) {
-        this.$emit("isLoggedIn", true)
+      if (
+        this.username === this.typedUsername &&
+        this.password === this.typedPassword
+      ) {
+        this.$emit("isLoggedIn", true);
       }
     }
   }

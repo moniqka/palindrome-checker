@@ -5,7 +5,8 @@
         Palindrome Checker
       </div>
       <p class="title__description">
-        A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward.
+        A palindrome is a word, number, phrase, or other sequence of characters
+        which reads the same backward as forward.
       </p>
     </header>
     <form class="container" @submit.prevent="checkIsPalindrome">
@@ -57,9 +58,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([
-      "checkerHistory"
-    ]),
+    ...mapGetters(["checkerHistory"]),
     word() {
       return this.text.toLowerCase().replace(/[\W_]/g, "");
     },
@@ -74,10 +73,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-      "addCheckedWordToHistory",
-      "getCheckerHistory"
-    ]),
+    ...mapActions(["addCheckedWordToHistory", "getCheckerHistory"]),
     clearText() {
       this.result = "...";
       this.text = "";
