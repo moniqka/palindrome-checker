@@ -2,19 +2,15 @@
 recrutation project --> src folder
 </br>
 
-## Project setup
-```
-npm install
-```
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# Previewing Locally
+npm install -g serve
+(-s flag means serve it in Single-Page Application mode)
+serve -s dist
 
-### Compiles and minifies for production
-```
-npm run build
-```
+# GitHub Pages
+I have tried and did everything as following:
+https://cli.vuejs.org/guide/deployment.html#github-pages and https://www.youtube.com/watch?v=6Xq0ALFs6Jw
+but for some reason I cannot deploy the project.. :(
 </br>
 
 ## TODO:
