@@ -1,13 +1,14 @@
 @charset 'UTF-8';
 //////////////// VARIABLES ////////////////
 //Typography
-$basefont: 'Roboto', 'Lato', sans-serif;
+$basefont: 'Roboto', sans-serif;
 $basefont-condensed: 'Roboto Condensed', $basefont;
 
 $font-size:        14px;
 $font-size-medium: 16px;
-$font-size-large:  20px;
+$font-size-large:  18px;
 $font-title: 40px;
+$font-title-desktop: 60px;
 
 $line-height:      1.5em;
 $font-weight:      400;
@@ -37,6 +38,23 @@ $body-bg:               #0d0d0d;
     padding: 10%;
     // margin-top: 20%;
     color: $primary;
+    @media screen and (min-width: 500px) {
+      padding: 5% 10%;
+    }
+  }
+  .title {
+    text-transform: uppercase;
+    font-size: $font-title;
+    @media screen and (min-width: 500px) {
+      font-size: $font-title-desktop;
+    }
+    &__description {
+      color: $primary-light;
+      font-family: $basefont-condensed;
+      @media screen and (min-width: 500px) {
+        font-size: $font-size-large;
+      }
+    }
   }
   .button {
     border: 2px solid $primary;
@@ -82,5 +100,18 @@ $body-bg:               #0d0d0d;
         color: $primary;
         font-size: $font-size-medium;
       }
+    }
+  }
+  main.container {
+    margin-top: 5%;
+    height: auto;
+  }
+  footer {
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  header {
+    @media screen and (min-width: 500px) {
+      width: 50%;
     }
   }

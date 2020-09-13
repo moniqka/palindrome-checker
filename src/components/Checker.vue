@@ -9,7 +9,9 @@
       </p>
     </header>
     <form class="container" @submit.prevent="checkIsPalindrome">
-      <label for="text-box" :style="{ color: isPalindrome ? `green` : `red` }">{{ result }}</label>
+      <label for="text-box">
+        {{ result }}
+      </label>
       <input
         type="text"
         name="text-box"
@@ -20,24 +22,24 @@
         placeholder="type in word or phase..."
       />
       <button type="submit" class="button">CHECK</button>
-    </form>
-    <section class="search-history">
-      <ul class="search-history__list">
-        <li
-          v-for="(word, key) in history"
-          :key="key"
-          class="search-history__word"
-        >
-          <p class="search-history__word__text">{{ word.text }}</p>
-          <span
-            class="search-history__word__result"
-            :style="{ color: word.palindrome ? `green` : `red` }"
+      <section class="search-history">
+        <ul class="search-history__list">
+          <li
+            v-for="(word, key) in history"
+            :key="key"
+            class="search-history__word"
           >
-            {{ word.palindrome }}
-          </span>
-        </li>
-      </ul>
-    </section>
+            <p class="search-history__word__text">{{ word.text }}</p>
+            <span
+              class="search-history__word__result"
+              :style="{ color: word.palindrome ? `green` : `red` }"
+            >
+              {{ word.palindrome }}
+            </span>
+          </li>
+        </ul>
+      </section>
+    </form>
     <footer>Ceated by Monika Kowalska</footer>
   </div>
 </template>
@@ -50,7 +52,7 @@ export default {
   data() {
     return {
       text: "",
-      result: "",
+      result: "...",
       history: []
     };
   },
@@ -77,7 +79,7 @@ export default {
       "getCheckerHistory"
     ]),
     clearText() {
-      this.result = "";
+      this.result = "...";
       this.text = "";
     },
     checkIsPalindrome() {
@@ -109,19 +111,14 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/scss/_library.scss";
-.title {
-  text-transform: uppercase;
-  font-size: $font-title;
-  &__description {
-    color: $primary-light;
-    font-family: $basefont-condensed;
+form.container {
+  padding: 5% 10%;
+  @media screen and (min-width: 500px) {
+    padding: 0;
+    width: 50%;
   }
-}
-main.container {
-  margin-top: 5%;
-  height: auto;
 }
 .search-history {
   border: 2px solid $primary-dark;
@@ -130,20 +127,34 @@ main.container {
   color: $primary;
   width: 100%;
   margin: 10px;
+  margin-top: 20px;
   padding: 5px;
   &__list {
     padding: 0;
+    margin: 0;
   }
   &__word {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 5px 20px;
+    margin: 5px 10px;
     &__text {
-      font-size: 18px;
+      font-size: $font-size-medium;
       margin: 0;
+      @media screen and (min-width: 500px) {
+        font-size: $font-size-large;
+      }
+    }
+    &__result {
+      @media screen and (min-width: 500px) {
+        font-size: $font-size-large;
+      }
     }
   }
+}
+label {
+  color: $primary-dark;
+  font-size: $font-size;
 }
 </style>

@@ -8,11 +8,11 @@
         A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward.
       </p>
     </header>
-    <main class="container">
+    <form class="container">
       <input class="button button__input" placeholder="username" />
       <input class="button button__input" placeholder="password" />
       <button class="button">LOG IN</button>
-    </main>
+    </form>
     <footer>Ceated by Monika Kowalska</footer>
   </div>
 </template>
@@ -23,18 +23,12 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/scss/_library.scss";
-.title {
-  text-transform: uppercase;
-  font-size: $font-title;
-  &__description {
-    color: $primary-light;
-    font-family: $basefont-condensed;
+form.container {
+  @media screen and (min-width: 500px) {
+    padding: 0;
+    width: 50%;
   }
-}
-main.container {
-  margin-top: 5%;
-  height: auto;
 }
 </style>

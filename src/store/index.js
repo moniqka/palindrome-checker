@@ -12,7 +12,6 @@ export default new Vuex.Store({
   },
   mutations: {
     SET_CHECKER_HISTORY(state, list) {
-      console.log('list', list)
       state.checkerHistory = list;
     },
     ADD_CHECKED_WORD(state, word) {
@@ -24,7 +23,6 @@ export default new Vuex.Store({
   },
   actions: {
     getCheckerHistory({ commit }, array) {
-      console.log('array', array)
       commit("SET_CHECKER_HISTORY", array);
     },
     addCheckedWordToHistory({ commit }, word) {
