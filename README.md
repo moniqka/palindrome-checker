@@ -8,9 +8,7 @@ recrutation project --> src folder
 `serve -s dist`
 
 # GitHub Pages
-I have tried and did everything as following:
-https://cli.vuejs.org/guide/deployment.html#github-pages and https://www.youtube.com/watch?v=6Xq0ALFs6Jw
-but for some reason I cannot deploy the project.. :(
+You can see the project on https://moniqka.github.io/palindrome-checker/
 </br>
 
 ## TODO:
