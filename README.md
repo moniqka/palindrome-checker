@@ -1,10 +1,11 @@
 # palindrom-checker
+recrutation project --> src folder
+</br>
 
 ## Project setup
 ```
 npm install
 ```
-
 ### Compiles and hot-reloads for development
 ```
 npm run serve
@@ -14,16 +15,10 @@ npm run serve
 ```
 npm run build
 ```
+</br>
 
-### Run your unit tests
-```
-npm run test:unit
-```
+## TODO:
+- unit test
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## FEATURES:
+- form validation
